@@ -1,0 +1,23 @@
+﻿@using MVC.Forms
+@{
+    ViewData["Title"] = "Contato";
+}
+
+@model ContatoForm
+
+<form asp-controller="Contato" asp-action="BotaoClicado" method="post">
+    <div class="form-group">
+
+
+        <label class="color-text" for="inputNome">Email</label>
+        <input id="inputNome" class="form-control" type="text" name="Email" maxlength="200" placeholder="Ex: joaodasilva@gmail.com" />
+
+        <label class="color-text" for="inputSenha">Senha</label>
+        <input id="inputSenha" class="form-control" type="password" name="Senha" maxlength="50" placeholder="*******" />
+
+        <div class="div-button">
+            <button type="submit" class="btn btn-primary">Clique Aqui</button>
+        </div>
+    </div>
+    
+</form>
