@@ -1,3 +1,6 @@
+using Entity.Models;
+using Microsoft.EntityFrameworkCore;
+using MVC.Context;
 using MVC.Services;
 
 namespace MVC
@@ -11,7 +14,12 @@ namespace MVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<DataContatoContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext")));
+
             builder.Services.AddScoped<ContatoService>();
+
+            builder.Services.AddHttpClient();
 
             var app = builder.Build();
 
